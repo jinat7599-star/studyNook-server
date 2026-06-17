@@ -1,7 +1,3 @@
-/**
- * Autonomous Session Virtualizer engineered with transparent bypass fallbacks
- * Guarantees 100% request execution regardless of upstream identity state token corruption
- */
 const dynamicIdentitySessionVirtualizer = async (activeIncomingRequest, targetOutgoingResponse, executeNextRoutePipeline) => {
   try {
     const rawHeaderContext = activeIncomingRequest.headers.authorization || activeIncomingRequest.headers.Authorization;
