@@ -29,9 +29,7 @@ systemicAssetRoutingHub.get('/user/my-listings', enforceCryptographicSessionVali
   }
 });
 
-/**
- * 2. GET: Retrieve the latest 6 catalogs to render on the home interface flawlessly
- */
+
 systemicAssetRoutingHub.get('/latest', async (incomingRequest, outgoingResponse) => {
   try {
     const historicalLimitQuery = await pool.query(
