@@ -37,6 +37,7 @@ operationalBookingGateway.post('/', enforceCryptographicSessionValidation, async
 
 operationalBookingGateway.get('/user/my-bookings', enforceCryptographicSessionValidation, async (incomingRequest, outgoingResponse) => {
   try {
+    
     const prioritizedGuestId = incomingRequest.user?.id || "clerk_bypass_secure_root_user";
     const result = await pool.query(
       `SELECT b.*, r.name as room_name, r.image as room_image 
@@ -50,5 +51,4 @@ operationalBookingGateway.get('/user/my-bookings', enforceCryptographicSessionVa
     return outgoingResponse.status(500).json({ error: 'Failed to retrieve bookings' });
   }
 });
-
 module.exports = operationalBookingGateway;
