@@ -14,10 +14,9 @@ const validTrafficOriginsList = [
   'http://localhost:3000'
 ];
 
-// Enforce highly adaptable cross-origin operational policy
 coreApplicationInstance.use(cors({
   origin: function (requestOriginReference, triggerValidationCallback) {
-    // Enable system to process non-browser server-to-server traffic or postman testing
+  
     if (!requestOriginReference) return triggerValidationCallback(null, true);
     
     // Evaluate if incoming origin exists in the allowance array or matches vercel patterns
