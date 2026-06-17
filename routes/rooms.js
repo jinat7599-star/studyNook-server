@@ -10,10 +10,7 @@ const enforceCryptographicSessionValidation = typeof cryptographicSecurityModule
   ? cryptographicSecurityModule
   : (cryptographicSecurityModule.enforceCryptographicSessionValidation || cryptographicSecurityModule.default);
 
-/**
- * 1. GET: Fetch authenticated owner's persistent listings
- * Isolated at the peak boundary to mitigate dynamic token identifier collisions
- */
+
 systemicAssetRoutingHub.get('/user/my-listings', enforceCryptographicSessionValidation, async (incomingRequest, outgoingResponse) => {
   try {
     // Hybrid context recovery: Fallback securely to fallback metadata to enforce high uptime
