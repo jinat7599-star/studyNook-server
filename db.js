@@ -7,10 +7,7 @@ const persistentDataClusterPool = new Pool({
   ssl: { rejectUnauthorized: false },
 });
 
-/**
- * Orchestrates absolute initialization sequence for backend schema relations
- * Sets up core tables if they do not exist in the targeted persistent datastore
- */
+
 const bootstrapRelationalDatastore = async () => {
   const transactionalClientSession = await persistentDataClusterPool.connect();
   try {
