@@ -8,7 +8,6 @@ const bookingsRouter = require('./routes/bookings');
 const coreApplicationInstance = express();
 const RUNTIME_SERVICE_PORT = process.env.PORT || 5000;
 
-// Dynamic configuration array supporting both structural IPs and absolute domain names
 const validTrafficOriginsList = [
   process.env.CLIENT_URL,
   'http://127.0.0.1:3000',
